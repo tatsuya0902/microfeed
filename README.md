@@ -18,7 +18,7 @@
     ·
     <a href="mailto:support@microfeed.org"><b>Email Us Privately</b></a>
   </p>
-  
+
 Welcome to microfeed, a lightweight content management system (CMS) self-hosted on Cloudflare.
 With microfeed, you can easily publish a variety of content such as audios, videos, photos, documents, blog posts,
 and external URLs to a feed in the form of web, RSS, and JSON. It's the perfect solution for tech-savvy individuals who
@@ -57,13 +57,13 @@ People (and bots) publish items to a feed, and others can subscribe to that feed
 microfeed makes it easy for individuals to self-host their own feed on Cloudflare, including but not limited to
 * a podcast feed of audios
 * a blog feed of posts
-* an Instagram-like feed of images (e.g., [llamacorn.listennotes.com](https://llamacorn.listennotes.com/))
+* an Instagram-like feed of images (e.g., [llamacorn.listennotes.com](https://llamacorn.listennotes.com/), [brand-assets.listennotes.com](https://brand-assets.listennotes.com/))
 * a YouTube-like feed of videos
 * a personal website with custom links (e.g., [wenbin.org](https://www.wenbin.org/))
 * a content curation feed of external news article urls
 * a marketing site with updates and press coverage (e.g., [microfeed.org](https://www.microfeed.org/))
 * a headless cms with a GUI dashboard and a public json feed (e.g., [microfeed.org/json](https://www.microfeed.org/json/) with OpenAPI spec in [YAML](https://www.microfeed.org/json/openapi.yaml) and [HTML](https://www.microfeed.org/json/openapi.html))
-* a list of domain names for sale (e.g., [listen411.com](https://www.listen411.com/), [ListenHost.com](https://www.listenhost.com/)...)
+* a list of domain names for sale (e.g., [ListenHost.com](https://www.listenhost.com/)...)
 * a website for an entire book (e.g., [The Art of War](https://the-art-of-war.dripbook.xyz/))
 * ...
 
@@ -174,9 +174,10 @@ Create an R2 API token here:
 
   <img width="1328" alt="Screenshot 2022-12-04 at 4 43 58 PM" src="https://user-images.githubusercontent.com/1719237/205526381-cc11d4fe-b053-49d0-9072-de54db31b3b7.png">
 
-Select "Edit" permission and create an API token:
+Select "Admin Read & Write" permission and create an API token:
 
-  <img width="849" alt="Screenshot 2022-12-04 at 4 45 18 PM" src="https://user-images.githubusercontent.com/1719237/205526491-79a87e1e-02e0-4268-9f88-7d9cdc6b3b68.png">
+  <img width="858" alt="Screenshot 2023-08-08 at 4 33 55 PM" src="https://github.com/microfeed/microfeed/assets/1719237/1a90df29-5660-49d4-b66a-24873812492d">
+
 
 Copy Access Key ID for R2_ACCESS_KEY_ID, and Secret Access Key for R2_SECRET_ACCESS_KEY
   <img width="728" alt="Screenshot 2022-12-04 at 4 45 35 PM" src="https://user-images.githubusercontent.com/1719237/205526582-92f440ac-21c4-46d9-a065-cfc1937391c8.png">
@@ -329,7 +330,7 @@ You can use the command line tool `wrangler` to find sqlite database files and d
 
 <b>How to download media files from R2?</b>
 
-As of Feb 16, 2023, Cloudflare has not provided tools to to batch download all files from a R2 bucket. 
+As of Feb 16, 2023, Cloudflare has not provided tools to to batch download all files from a R2 bucket.
 
 You may need to write a script to use [S3-compatible APIs](https://developers.cloudflare.com/r2/data-access/s3-api/api/) to fetch all objects from a specific R2 bucket.
 
@@ -343,6 +344,8 @@ If you have an idea for a new feature or have found a bug, please [open an issue
 If you'd like to submit a fix or new feature, please create a pull request with a detailed description of your changes.
 
 ### Run microfeed on local
+
+Pre-requisites: node / npm, yarn, and wrangler
 
 First, create a .vars.toml file in microfeed's root directory (same level as this README.md file) and put 5 secrets in the .vars.toml file (Similar to [Step 2. Put some secrets on your forked repo](#step-2-put-some-secrets-on-your-forked-repo)):
 ```toml
